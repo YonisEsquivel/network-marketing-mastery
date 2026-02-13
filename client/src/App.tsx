@@ -5,12 +5,38 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Upsell from "./pages/Upsell";
+import Downsell from "./pages/Downsell";
+import ThankYou from "./pages/ThankYou";
+import HojaDeRuta from "./pages/HojaDeRuta";
+import PlantillasContactos from "./pages/PlantillasContactos";
+import ChecklistsExito from "./pages/ChecklistsExito";
+import GuiasLiderazgo from "./pages/GuiasLiderazgo";
+import EstrategiasAtraccion from "./pages/EstrategiasAtraccion";
+import TallerLiderazgo from "./pages/TallerLiderazgo";
+import AdaptacionTendencias from "./pages/AdaptacionTendencias";
+import ProgramaMotivacion from "./pages/ProgramaMotivacion";
+import RedisenoVida from "./pages/RedisenoVida";
+import CalculadoraCerteza from "./pages/CalculadoraCerteza";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/upsell"} component={Upsell} />
+      <Route path={"/downsell"} component={Downsell} />
+      <Route path={"/thank-you"} component={ThankYou} />
+      <Route path={"/hoja-de-ruta"} component={HojaDeRuta} />
+      <Route path={"/plantillas-contactos"} component={PlantillasContactos} />
+      <Route path={"/checklists-exito"} component={ChecklistsExito} />
+      <Route path={"/guias-liderazgo"} component={GuiasLiderazgo} />
+      <Route path={"/estrategias-atraccion"} component={EstrategiasAtraccion} />
+      <Route path={"/taller-liderazgo"} component={TallerLiderazgo} />
+      <Route path={"/adaptacion-tendencias"} component={AdaptacionTendencias} />
+      <Route path={"/programa-motivacion"} component={ProgramaMotivacion} />
+      <Route path={"/rediseno-vida"} component={RedisenoVida} />
+      <Route path={"/calculadora-certeza"} component={CalculadoraCerteza} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

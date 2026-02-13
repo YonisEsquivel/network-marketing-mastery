@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, userProgress } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,66 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+/**
+ * Save or update user progress for a specific tool
+ */
+export async function saveUserProgress(userId: number, toolId: string, progressData: any): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot save progress: database not available");
+    return;
+  }
+
+  try {
+    // Check if progress exists
+    const existing = await db
+      .select()
+      .from(userProgress)
+      .where(and(eq(userProgress.userId, userId), eq(userProgress.toolId, toolId)))
+      .limit(1);
+
+    if (existing.length > 0) {
+      // Update existing
+      await db
+        .update(userProgress)
+        .set({ progressData, updatedAt: new Date() })
+        .where(and(eq(userProgress.userId, userId), eq(userProgress.toolId, toolId)));
+    } else {
+      // Insert new
+      await db.insert(userProgress).values({
+        userId,
+        toolId,
+        progressData,
+      });
+    }
+  } catch (error) {
+    console.error("[Database] Failed to save progress:", error);
+    throw error;
+  }
+}
+
+/**
+ * Get user progress for a specific tool
+ */
+export async function getUserProgress(userId: number, toolId: string): Promise<any | null> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get progress: database not available");
+    return null;
+  }
+
+  try {
+    const result = await db
+      .select()
+      .from(userProgress)
+      .where(and(eq(userProgress.userId, userId), eq(userProgress.toolId, toolId)))
+      .limit(1);
+
+    if (result.length === 0) return null;
+
+    return result[0].progressData;
+  } catch (error) {
+    console.error("[Database] Failed to get progress:", error);
+    return null;
+  }
+}
