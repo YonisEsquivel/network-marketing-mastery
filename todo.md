@@ -69,5 +69,5 @@
 
 ## Integración con Hotmart (Febrero 2026)
 - [x] Integrar widget de Sales Funnel en página Upsell
-- [ ] Integrar widget de Sales Funnel en página Downsell
+- [x] Integrar widget de Sales Funnel en página Downsell
 - [x] Verificar funcionamiento del checkout (compilación exitosa)

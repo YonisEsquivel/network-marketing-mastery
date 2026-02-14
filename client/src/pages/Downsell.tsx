@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -14,6 +15,26 @@ import {
 } from "lucide-react";
 
 export default function Downsell() {
+  useEffect(() => {
+    // Cargar script de Hotmart
+    const script = document.createElement('script');
+    script.src = 'https://checkout.hotmart.com/lib/hotmart-checkout-elements.js';
+    script.async = true;
+    script.onload = () => {
+      // Inicializar el widget de Hotmart
+      if ((window as any).checkoutElements) {
+        (window as any).checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Limpiar el script al desmontar
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
   const upsells = [
     {
       icon: Zap,
@@ -183,12 +204,8 @@ export default function Downsell() {
             <p className="text-base sm:text-lg text-muted-foreground mb-8">
               Acceso de por vida a las 6 herramientas avanzadas
             </p>
-            <Button 
-              size="lg" 
-              className="text-lg sm:text-xl md:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-7 md:py-8 h-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl hover:shadow-primary/50 transition-all transform hover:scale-105 w-full sm:w-auto"
-            >
-              Sí, Acepto Esta Oferta Especial
-            </Button>
+            {/* HOTMART - Sales Funnel Widget */}
+            <div id="hotmart-sales-funnel"></div>
             <p className="text-sm sm:text-base italic text-muted-foreground mt-4">
               Porque merezco invertir en mi crecimiento sin sacrificar mi presupuesto
             </p>
