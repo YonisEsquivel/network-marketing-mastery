@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -28,7 +29,12 @@ import {
   Network
 } from "lucide-react";
 
+import { CheckoutModal } from "@/components/CheckoutModal";
+
 export default function Home() {
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/D104193943Q";
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Hero Section */}
@@ -199,6 +205,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="text-lg sm:text-xl md:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-7 md:py-8 h-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all transform hover:scale-105 w-full sm:w-auto"
+                onClick={() => setCheckoutModalOpen(true)}
               >
                 Sí, Quiero Esta Guía Ahora
               </Button>
@@ -314,6 +321,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
               <Button 
                 size="lg" 
                 className="text-base sm:text-xl md:text-2xl px-4 sm:px-12 md:px-16 py-6 sm:py-7 md:py-8 h-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all transform hover:scale-105 w-full sm:w-auto max-w-full leading-tight"
+                onClick={() => setCheckoutModalOpen(true)}
               >
                 <span className="text-balance">Quiero Acceso a Todas las Herramientas</span>
               </Button>
@@ -641,6 +649,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
               <Button 
                 size="lg" 
                 className="text-lg sm:text-xl md:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-7 md:py-8 h-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all transform hover:scale-105 w-full sm:w-auto"
+                onClick={() => setCheckoutModalOpen(true)}
               >
                 Sí, Quiero Empezar Ahora
               </Button>
@@ -699,6 +708,14 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
 
         </div>
       </div>
+
+      {/* Modal de Checkout */}
+      <CheckoutModal
+        open={checkoutModalOpen}
+        onOpenChange={setCheckoutModalOpen}
+        checkoutUrl={HOTMART_CHECKOUT_URL}
+        source="home"
+      />
     </div>
   );
 }

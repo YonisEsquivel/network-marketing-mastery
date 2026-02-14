@@ -13,19 +13,19 @@ El sitio web está completamente funcional con todas las características implem
 ### ✨ Sitio Web Completo
 - **Página principal** con landing page optimizada para conversión
 - **10 herramientas interactivas** con seguimiento de progreso
-- **Funnel de ventas** completo (Producto base $7 → Upsell $19.99 → Downsell $9.99)
+- **Funnel de ventas** completo (Producto base $9.97 → Upsell $19.97 → Downsell $9.97)
 - **Diseño visual único** con paleta "Comunidad y Conexión"
 - **Responsive design** para móvil, tablet y desktop
 
 ### 🛠️ Herramientas Disponibles
 
-**4 Herramientas Principales ($7)**:
+**4 Herramientas Principales ($9.97)**:
 1. **Hoja de Ruta Interactiva** - 15 pasos con checkboxes
 2. **Plantillas para Contactos** - 15 plantillas probadas
 3. **Checklists de Éxito Semanal** - 35 tareas organizadas
 4. **Guías sobre Liderazgo** - 18 principios fundamentales
 
-**6 Recursos Premium ($19.99)**:
+**6 Recursos Premium ($19.97)**:
 5. **Estrategias de Atracción Efectivas**
 6. **Taller de Habilidades de Liderazgo**
 7. **Adaptación a Nuevas Tendencias**
@@ -47,7 +47,7 @@ El sitio web está completamente funcional con todas las características implem
 ### 1. Personalizar el Contenido
 
 #### Cambiar Precios
-Si deseas modificar los precios ($7, $19.99, $9.99):
+Si deseas modificar los precios ($9.97, $19.97, $9.97):
 - Edita `client/src/pages/Home.tsx` para el precio base
 - Edita `client/src/pages/Upsell.tsx` para el upsell
 - Edita `client/src/pages/Downsell.tsx` para el downsell
@@ -72,9 +72,9 @@ Para procesar pagos reales:
 
 1. **Crear cuenta en Stripe**: https://stripe.com
 2. **Crear 3 productos** en tu dashboard:
-   - Producto Base: $7 USD
-   - Pack Premium: $19.99 USD
-   - Downsell: $9.99 USD
+   - Producto Base: $9.97 USD
+   - Pack Premium: $19.97 USD
+   - Downsell: $9.97 USD
 3. **Implementar Stripe Checkout** en los botones de compra
 4. **Configurar webhook** para entrega automática post-compra
 

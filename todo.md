@@ -9,18 +9,18 @@
 
 ## Frontend - Páginas Principales
 - [x] Migrar página Home (landing page con funnel de ventas)
-- [x] Migrar página Upsell ($19.99 pack premium)
-- [x] Migrar página Downsell ($9.99 oferta especial)
+- [x] Migrar página Upsell ($19.97 pack premium)
+- [x] Migrar página Downsell ($9.97 oferta especial)
 - [x] Migrar página ThankYou (confirmación post-compra)
 - [x] Migrar página NotFound (404)
 
-## Frontend - Herramientas Principales ($7)
+## Frontend - Herramientas Principales ($9.97)
 - [x] Migrar Hoja de Ruta Interactiva (15 pasos con checkboxes)
 - [x] Migrar Plantillas para Contactos (15 plantillas probadas)
 - [x] Migrar Checklists de Éxito Semanal (35 tareas)
 - [x] Migrar Guías sobre Liderazgo (18 principios)
 
-## Frontend - Recursos Premium ($19.99)
+## Frontend - Recursos Premium ($19.97)
 - [x] Migrar Estrategias de Atracción Efectivas
 - [x] Migrar Taller de Habilidades de Liderazgo
 - [x] Migrar Adaptación a Nuevas Tendencias
@@ -71,3 +71,18 @@
 - [x] Integrar widget de Sales Funnel en página Upsell
 - [x] Integrar widget de Sales Funnel en página Downsell
 - [x] Verificar funcionamiento del checkout (compilación exitosa)
+
+## Documentación (Febrero 2026)
+- [x] Actualizar precios en README.md
+- [x] Actualizar precios en GUIA_RAPIDA.md
+- [x] Actualizar precios en VERIFICACION.md
+- [x] Actualizar precios en todo.md
+- [x] Verificar consistencia en toda la documentación
+
+## Modal de Checkout (Febrero 2026)
+- [x] Crear tabla checkout_leads en schema de base de datos
+- [x] Crear endpoint tRPC para guardar leads
+- [x] Crear componente CheckoutModal
+- [x] Integrar modal en todos los botones de Home (3 botones CTA)
+- [x] Verificar redirección a Hotmart con datos pre-rellenados
+- [x] Crear y ejecutar tests unitarios (5/5 pasaron)

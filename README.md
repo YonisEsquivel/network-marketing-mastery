@@ -12,20 +12,20 @@ Este proyecto es una aplicación web full-stack construida con React, TypeScript
 
 La plataforma implementa un funnel de ventas optimizado para conversión con tres niveles de precio:
 
-- **Producto Principal ($7 USD)**: Acceso a 4 herramientas fundamentales con seguimiento de progreso interactivo
-- **Upsell - Pack Premium ($19.99 USD)**: 6 recursos adicionales avanzados para líderes de equipo
-- **Downsell (50% descuento - $9.99 USD)**: Oferta alternativa para maximizar conversión
+- **Producto Principal ($9.97 USD)**: Acceso a 4 herramientas fundamentales con seguimiento de progreso interactivo
+- **Upsell - Pack Premium ($19.97 USD)**: 6 recursos adicionales avanzados para líderes de equipo
+- **Downsell (50% descuento - $9.97 USD)**: Oferta alternativa para maximizar conversión
 
 ### 10 Herramientas Interactivas con Seguimiento de Progreso
 
-**4 Herramientas Principales (Producto Base - $7):**
+**4 Herramientas Principales (Producto Base - $9.97):**
 
 1. **Hoja de Ruta Interactiva** - 15 pasos secuenciales desde cero hasta construir una red rentable
 2. **Plantillas para Contactos** - 15 plantillas probadas para diferentes situaciones (contacto frío, seguimiento, cierre)
 3. **Checklists de Éxito Semanal** - 35 tareas organizadas en 11 semanas de acción consistente
 4. **Principios de Liderazgo** - 18 principios fundamentales para construir y motivar equipos
 
-**6 Recursos Premium (Pack Premium - $19.99):**
+**6 Recursos Premium (Pack Premium - $19.97):**
 
 5. **Estrategias de Atracción Efectivas** - Sistema completo para atraer prospectos sin perseguir
 6. **Taller de Habilidades de Liderazgo** - Ejercicios prácticos para desarrollar liderazgo auténtico
@@ -145,17 +145,17 @@ Para adaptar la plataforma a tu marca o nicho específico:
 
 #### Modificar Precios
 
-Si deseas cambiar los precios ($7, $19.99, $9.99):
+Si deseas cambiar los precios ($9.97, $19.97, $9.97):
 
 1. **Edita el archivo `client/src/pages/Home.tsx`**:
-   - Busca todas las menciones de `$7` y reemplaza por tu precio
-   - Actualiza la sección "¿Por Qué Solo $7?"
+   - Busca todas las menciones de `$9.97` y reemplaza por tu precio
+   - Actualiza la sección "¿Por Qué Solo $9.97?"
 
 2. **Edita `client/src/pages/Upsell.tsx`**:
-   - Cambia `$19.99` por tu precio de upsell
+   - Cambia `$19.97` por tu precio de upsell
 
 3. **Edita `client/src/pages/Downsell.tsx`**:
-   - Cambia `$9.99` por tu precio de downsell
+   - Cambia `$9.97` por tu precio de downsell
 
 #### Personalizar Colores y Diseño
 
@@ -194,9 +194,9 @@ Para procesar pagos reales, necesitas integrar Stripe:
 
 2. **Configurar productos en Stripe**:
    - Crea 3 productos en tu dashboard de Stripe:
-     - Producto Base: $7 USD
-     - Pack Premium: $19.99 USD
-     - Downsell: $9.99 USD
+     - Producto Base: $9.97 USD
+     - Pack Premium: $19.97 USD
+     - Downsell: $9.97 USD
 
 3. **Conectar Stripe Checkout**:
    - Implementa los botones de compra en `Home.tsx`, `Upsell.tsx` y `Downsell.tsx`
@@ -269,8 +269,8 @@ network-marketing-mastery/
 │   │   │   └── trpc.ts              # Cliente tRPC
 │   │   ├── pages/                   # Páginas de la aplicación
 │   │   │   ├── Home.tsx             # Landing page principal
-│   │   │   ├── Upsell.tsx           # Página de upsell ($19.99)
-│   │   │   ├── Downsell.tsx         # Página de downsell ($9.99)
+│   │   │   ├── Upsell.tsx           # Página de upsell ($19.97)
+│   │   │   ├── Downsell.tsx         # Página de downsell ($9.97)
 │   │   │   ├── ThankYou.tsx         # Página post-compra
 │   │   │   ├── HojaDeRuta.tsx       # Herramienta 1: 15 pasos
 │   │   │   ├── PlantillasContactos.tsx  # Herramienta 2: 15 plantillas

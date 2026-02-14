@@ -1,6 +1,6 @@
 import { and, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, userProgress } from "../drizzle/schema";
+import { InsertUser, users, userProgress, checkoutLeads, InsertCheckoutLead } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -75,9 +75,7 @@ export async function upsertUser(user: InsertUser): Promise<void> {
     console.error("[Database] Failed to upsert user:", error);
     throw error;
   }
-}
-
-export async function getUserByOpenId(openId: string) {
+}export async function getUserByOpenId(openId: string) {
   const db = await getDb();
   if (!db) {
     console.warn("[Database] Cannot get user: database not available");
@@ -89,9 +87,58 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-/**
- * Save or update user progress for a specific tool
- */
+// ============================================================================
+// Checkout Leads (Captura de leads antes de redirigir a Hotmart)
+// ============================================================================
+
+export async function createCheckoutLead(lead: Omit<InsertCheckoutLead, "createdAt" | "updatedAt">) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create checkout lead: database not available");
+    return null;
+  }
+
+  // Verificar si ya existe un lead con este email
+  const existing = await db
+    .select()
+    .from(checkoutLeads)
+    .where(eq(checkoutLeads.email, lead.email))
+    .limit(1);
+
+  if (existing.length > 0) {
+    // Si ya existe y no ha comprado, actualizar la fecha
+    if (existing[0].status !== "purchased") {
+      await db
+        .update(checkoutLeads)
+        .set({ 
+          name: lead.name,
+          source: lead.source,
+          updatedAt: new Date(),
+        })
+        .where(eq(checkoutLeads.id, existing[0].id));
+      
+      return existing[0];
+    }
+    // Si ya compró, no hacer nada
+    return existing[0];
+  }
+
+  // Crear nuevo lead
+  await db.insert(checkoutLeads).values(lead);
+  
+  // Retornar el lead creado
+  const result = await db
+    .select()
+    .from(checkoutLeads)
+    .where(eq(checkoutLeads.email, lead.email))
+    .limit(1);
+  
+  return result.length > 0 ? result[0] : null;
+}
+
+// ============================================================================
+// User Progress (Seguimiento de progreso en herramientas)
+// ============================================================================
 export async function saveUserProgress(userId: number, toolId: string, progressData: any): Promise<void> {
   const db = await getDb();
   if (!db) {

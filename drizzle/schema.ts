@@ -42,3 +42,24 @@ export const userProgress = mysqlTable("user_progress", {
 
 export type UserProgress = typeof userProgress.$inferSelect;
 export type InsertUserProgress = typeof userProgress.$inferInsert;
+
+/**
+ * Checkout leads table to capture potential customers before redirecting to Hotmart.
+ * Tracks email sequence progress and conversion status.
+ */
+export const checkoutLeads = mysqlTable("checkout_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  /** Source of the lead: 'home', 'demo', etc. */
+  source: varchar("source", { length: 50 }).notNull(),
+  /** Lead status: 'pending', 'purchased', 'abandoned' */
+  status: mysqlEnum("status", ["pending", "purchased", "abandoned"]).default("pending").notNull(),
+  /** Current step in email sequence (0-based) */
+  emailSequenceStep: int("emailSequenceStep").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CheckoutLead = typeof checkoutLeads.$inferSelect;
+export type InsertCheckoutLead = typeof checkoutLeads.$inferInsert;

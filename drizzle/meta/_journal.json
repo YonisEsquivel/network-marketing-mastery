@@ -15,6 +15,13 @@
       "when": 1770999286155,
       "tag": "0001_long_turbo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771103221432,
+      "tag": "0002_minor_boom_boom",
+      "breakpoints": true
     }
   ]
 }

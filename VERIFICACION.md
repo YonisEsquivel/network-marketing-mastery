@@ -31,23 +31,23 @@
 3. **Sección "Network Marketing Mastery"**: Explicación del sistema
 4. **"Así es Cómo Funciona"**: 3 pasos del proceso
 5. **"Por Qué Funciona Tan Bien"**: Mecanismo único
-6. **Precio**: $7 USD (precio tachado $47)
+6. **Precio**: $9.97 USD (precio tachado $47)
 7. **"Todo Lo Que Obtienes Dentro"**: 4 herramientas principales
 8. **"Funciona en Todos Tus Dispositivos"**: Responsive design
 9. **Testimonios**: 4 testimonios de usuarios
 10. **FAQ**: Preguntas frecuentes con acordeón interactivo
 11. **Garantía**: 7 días sin riesgo
-12. **"¿Por Qué Solo $7?"**: Justificación del precio
+12. **"¿Por Qué Solo $9.97?"**: Justificación del precio
 
 ### ✅ Herramientas Implementadas
 
-**4 Herramientas Principales ($7)**:
+**4 Herramientas Principales ($9.97)**:
 1. Hoja de Ruta Interactiva (15 pasos)
 2. Plantillas para Contactos (15 plantillas)
 3. Checklists de Éxito Semanal (35 tareas)
 4. Guías sobre Liderazgo (18 principios)
 
-**6 Recursos Premium ($19.99)**:
+**6 Recursos Premium ($19.97)**:
 5. Estrategias de Atracción Efectivas
 6. Taller de Habilidades de Liderazgo
 7. Adaptación a Nuevas Tendencias
@@ -67,8 +67,8 @@
 ## Páginas del Funnel de Ventas
 
 1. **Home** (`/`) - Landing page principal ✅
-2. **Upsell** (`/upsell`) - Pack Premium $19.99
-3. **Downsell** (`/downsell`) - Oferta 50% descuento $9.99
+2. **Upsell** (`/upsell`) - Pack Premium $19.97
+3. **Downsell** (`/downsell`) - Oferta 50% descuento $9.97
 4. **Thank You** (`/thank-you`) - Página post-compra
 
 ---

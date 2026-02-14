@@ -40,6 +40,25 @@ export const appRouter = router({
         return progress;
       }),
   }),
+
+  // Checkout lead capture
+  checkout: router({
+    captureLead: publicProcedure
+      .input(z.object({
+        name: z.string().min(1),
+        email: z.string().email(),
+        source: z.enum(["home", "demo"]).default("home"),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createCheckoutLead({
+          name: input.name,
+          email: input.email.toLowerCase(),
+          source: input.source,
+          status: "pending",
+          emailSequenceStep: 0,
+        });
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
