@@ -91,5 +91,5 @@
 - [x] Actualizar DEPLOYMENT.md con instrucciones de Cloudflare
 - [x] Actualizar README.md con cambios recientes (precios, modal, Hotmart)
 - [x] Crear archivo .env.example con variables de entorno necesarias
-- [ ] Sincronizar repositorio de GitHub con todos los cambios
-- [ ] Verificar que todo esté listo para migración a Cloudflare
+- [x] Sincronizar repositorio de GitHub con todos los cambios
+- [x] Verificar que todo esté listo para migración a Cloudflare
