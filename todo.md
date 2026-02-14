@@ -52,3 +52,10 @@
 - [x] Verificar flujo completo del funnel de ventas
 - [x] Crear tests unitarios para endpoints de progreso
 - [ ] Crear checkpoint final
+
+## Actualización de Precios (Febrero 2026)
+- [x] Actualizar precio base de $7 a $9.97 en página Home
+- [x] Actualizar precio en página Upsell ($19.99 a $19.97)
+- [x] Actualizar precio en página Downsell ($9.99 a $9.97)
+- [x] Verificar consistencia de precios en todo el funnel
+- [ ] Crear checkpoint con nuevos precios

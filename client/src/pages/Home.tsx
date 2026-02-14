@@ -193,7 +193,7 @@ export default function Home() {
               <div className="text-center space-y-2 mb-4">
                 <p className="text-base sm:text-lg text-muted-foreground">
                   <span className="line-through text-gray-400">$47</span>
-                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$7</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$9.97</span>
                 </p>
               </div>
               <Button 
@@ -308,7 +308,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
               <div className="text-center space-y-2 mb-4">
                 <p className="text-base sm:text-lg text-muted-foreground">
                   <span className="line-through text-gray-400">$47</span>
-                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$7</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$9.97</span>
                 </p>
               </div>
               <Button 
@@ -559,7 +559,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
           <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-primary/20 shadow-xl">
             <div className="max-w-3xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center">
-                ¿Por Qué Solo $7?
+                ¿Por Qué Solo $9.97?
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground text-center leading-relaxed">
                 Podría cobrar <span className="font-bold line-through text-gray-500">$47</span> como otros programas de marketing en red.
@@ -582,7 +582,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
                   <div className="text-4xl text-primary">→</div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground mb-1">Network Marketing Mastery</p>
-                    <p className="text-5xl font-bold text-primary">$7</p>
+                    <p className="text-5xl font-bold text-primary">$9.97</p>
                   </div>
                 </div>
                 <p className="text-center text-muted-foreground">
@@ -614,7 +614,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
                   ⚠️ Este precio es temporal
                 </p>
                 <p className="text-muted-foreground">
-                  Estoy construyendo testimonios reales. Una vez tenga 500 miembros, el precio subirá a $19. <span className="font-bold">Si entras ahora, mantienes $7 para siempre.</span>
+                  Estoy construyendo testimonios reales. Una vez tenga 500 miembros, el precio subirá a $27. <span className="font-bold">Si entras ahora, mantienes $9.97 para siempre.</span>
                 </p>
               </div>
             </div>
@@ -635,7 +635,7 @@ Serás capaz de construir un equipo que trabaja contigo, lo que significa que mu
               <div className="text-center space-y-2 mb-4">
                 <p className="text-base sm:text-lg text-muted-foreground">
                   <span className="line-through text-gray-400">$47</span>
-                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$7</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary ml-2 sm:ml-3">$9.97</span>
                 </p>
               </div>
               <Button 

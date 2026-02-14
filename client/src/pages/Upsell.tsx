@@ -26,7 +26,7 @@ export default function Upsell() {
       name: "Estrategias de Atracción Efectivas",
       image: "/upsell-mockups/producto-1-atraccion.png",
       description: "Tácticas específicas sobre cómo utilizar las redes sociales y otros medios de contacto para atraer nuevos prospectos de forma constante.",
-      price: 19.99,
+      price: 19.97,
       format: "Guía Paso a Paso"
     },
     {
@@ -34,7 +34,7 @@ export default function Upsell() {
       name: "Taller de Habilidades de Liderazgo",
       image: "/upsell-mockups/producto-2-liderazgo.png",
       description: "Ejercicios prácticos y consejos sobre cómo inspirar y acompañar a otros en su viaje de marketing en red. Conviértete en un líder efectivo.",
-      price: 19.99,
+      price: 19.97,
       format: "Workbook Interactivo"
     },
     {
@@ -42,7 +42,7 @@ export default function Upsell() {
       name: "Adaptación a Nuevas Tendencias",
       image: "/upsell-mockups/producto-3-tendencias.png",
       description: "Herramientas y pautas sobre cómo implementar las nuevas tendencias de marketing y ajustar tu enfoque para mantenerte relevante.",
-      price: 19.99,
+      price: 19.97,
       format: "Checklist Actualizable"
     },
     {
@@ -50,7 +50,7 @@ export default function Upsell() {
       name: "Programa de Motivación Colectiva",
       image: "/upsell-mockups/producto-4-motivacion.png",
       description: "Recursos y actividades para mantener alta la moral en el equipo y comprometer a cada miembro hacia el éxito colectivo.",
-      price: 19.99,
+      price: 19.97,
       format: "Plan de Acción"
     },
     {
@@ -58,7 +58,7 @@ export default function Upsell() {
       name: "Rediseño de Vida y Propósito",
       image: "/upsell-mockups/producto-5-proposito.png",
       description: "Alinea tus metas personales con tu negocio. Integra tus deseos y objetivos en tu estrategia de marketing para vivir con propósito.",
-      price: 19.99,
+      price: 19.97,
       format: "Hoja de Ruta Personal"
     },
     {
@@ -66,7 +66,7 @@ export default function Upsell() {
       name: "Calculadora de Certeza: Tu Plan de Libertad Diaria",
       image: "/upsell-mockups/producto-6-calculadora.png",
       description: "Herramienta de ingeniería inversa que traduce tus metas económicas en acciones diarias simples. Calcula tu 'Número Mágico Diario' de prospectos.",
-      price: 19.99,
+      price: 19.97,
       format: "Software Interactivo"
     },
   ];
@@ -175,7 +175,7 @@ export default function Upsell() {
               Lo que incluye el Pack Premium
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Cada uno de estos productos se vende individualmente a $19.99. 
+              Cada uno de estos productos se vende individualmente a $19.97. 
               Pero hoy, solo en esta página, puedes llevarte los 6 por un único pago.
             </p>
 
@@ -300,7 +300,7 @@ export default function Upsell() {
                   <div className="text-center">
                     <p className="text-sm opacity-90 mb-2">Precio del Pack Premium HOY:</p>
                     <p className="text-5xl md:text-6xl font-bold">
-                      $19.99
+                      $19.97
                     </p>
                     <p className="text-sm opacity-90 mt-2">Un único pago</p>
                   </div>
@@ -348,7 +348,7 @@ export default function Upsell() {
             <div id="hotmart-upsell-button" className="py-8">
               <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl p-8 shadow-2xl hover:shadow-primary/50 transition-all cursor-pointer">
                 <p className="text-3xl font-bold mb-4">
-                  Sí, quiero el Pack Premium por $19.99
+                  Sí, quiero el Pack Premium por $19.97
                 </p>
                 <p className="text-lg opacity-90">
                   Porque estoy listo para sostener mi crecimiento a largo plazo

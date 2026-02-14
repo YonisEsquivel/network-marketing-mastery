@@ -93,9 +93,9 @@ export default function Downsell() {
             <div className="bg-white rounded-xl p-6 sm:p-8 border-2 border-primary/20 shadow-lg">
               <div className="text-center space-y-4">
                 <p className="text-base sm:text-lg text-muted-foreground">Precio Regular:</p>
-                <p className="text-3xl sm:text-4xl text-gray-400 line-through">$19.99</p>
+                <p className="text-3xl sm:text-4xl text-gray-400 line-through">$19.97</p>
                 <p className="text-lg sm:text-xl font-bold text-primary">Tu Precio Especial de Hoy:</p>
-                <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary">$9.99</p>
+                <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary">$9.97</p>
                 <p className="text-sm sm:text-base text-muted-foreground">
                   Ahorras $10.00 (50% de descuento)
                 </p>
@@ -133,7 +133,7 @@ export default function Downsell() {
             <Card className="border-4 border-primary bg-gradient-to-br from-primary/10 to-secondary/10 max-w-2xl mx-auto">
               <CardContent className="p-6 sm:p-8">
                 <p className="text-lg sm:text-xl font-bold text-foreground mb-2">Pack Premium</p>
-                <p className="text-3xl sm:text-4xl font-bold text-primary mb-4">$9.99</p>
+                <p className="text-3xl sm:text-4xl font-bold text-primary mb-4">$9.97</p>
                 <p className="text-base sm:text-lg text-muted-foreground font-semibold">
                   Acceso de por vida a 6 herramientas que transforman tu negocio para siempre
                 </p>
@@ -145,7 +145,7 @@ export default function Downsell() {
         {/* Los 6 Recursos Incluidos */}
         <div className="mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
-            Todo Lo Que Obtienes Por Solo $9.99
+            Todo Lo Que Obtienes Por Solo $9.97
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {upsells.map((upsell, i) => {
@@ -179,7 +179,7 @@ export default function Downsell() {
                 Oferta válida solo en esta página
               </p>
             </div>
-            <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary mb-6">$9.99</p>
+            <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary mb-6">$9.97</p>
             <p className="text-base sm:text-lg text-muted-foreground mb-8">
               Acceso de por vida a las 6 herramientas avanzadas
             </p>
@@ -225,7 +225,7 @@ export default function Downsell() {
                 ⚠️ Importante
               </p>
               <p className="text-sm sm:text-base text-muted-foreground">
-                Esta oferta especial de $9.99 solo está disponible en esta página. 
+                Esta oferta especial de $9.97 solo está disponible en esta página. 
                 Si sales, perderás este descuento del 50% para siempre.
               </p>
             </CardContent>
