@@ -58,4 +58,16 @@
 - [x] Actualizar precio en página Upsell ($19.99 a $19.97)
 - [x] Actualizar precio en página Downsell ($9.99 a $9.97)
 - [x] Verificar consistencia de precios en todo el funnel
-- [ ] Crear checkpoint con nuevos precios
+- [x] Crear checkpoint con nuevos precios
+
+## Diseño de Marketing (Febrero 2026)
+- [x] Crear imagen de producto Pack Premium para Hotmart
+- [x] Crear imagen Pack Premium con precio $19.97 visible
+- [x] Crear imagen producto principal ($9.97) para Hotmart
+- [x] Crear imagen producto principal sin precio para Hotmart
+- [x] Documentar estilos CSS de botones para Hotmart
+
+## Integración con Hotmart (Febrero 2026)
+- [x] Integrar widget de Sales Funnel en página Upsell
+- [ ] Integrar widget de Sales Funnel en página Downsell
+- [x] Verificar funcionamiento del checkout (compilación exitosa)

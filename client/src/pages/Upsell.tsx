@@ -20,6 +20,27 @@ export default function Upsell() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    // Cargar script de Hotmart cuando el contenido se muestra
+    if (showContent) {
+      const script = document.createElement('script');
+      script.src = 'https://checkout.hotmart.com/lib/hotmart-checkout-elements.js';
+      script.async = true;
+      script.onload = () => {
+        // Inicializar el widget de Hotmart
+        if ((window as any).checkoutElements) {
+          (window as any).checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+        }
+      };
+      document.body.appendChild(script);
+
+      return () => {
+        // Limpiar el script al desmontar
+        document.body.removeChild(script);
+      };
+    }
+  }, [showContent]);
+
   const products = [
     {
       id: 1,
@@ -344,16 +365,10 @@ export default function Upsell() {
               </p>
             </div>
 
-            {/* Botón CTA */}
-            <div id="hotmart-upsell-button" className="py-8">
-              <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl p-8 shadow-2xl hover:shadow-primary/50 transition-all cursor-pointer">
-                <p className="text-3xl font-bold mb-4">
-                  Sí, quiero el Pack Premium por $19.97
-                </p>
-                <p className="text-lg opacity-90">
-                  Porque estoy listo para sostener mi crecimiento a largo plazo
-                </p>
-              </div>
+            {/* Botón CTA - Hotmart Widget */}
+            <div className="py-8">
+              {/* HOTMART - Sales Funnel Widget */}
+              <div id="hotmart-sales-funnel"></div>
             </div>
 
             <p className="text-sm text-gray-500">
