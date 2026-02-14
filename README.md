@@ -16,6 +16,16 @@ La plataforma implementa un funnel de ventas optimizado para conversión con tre
 - **Upsell - Pack Premium ($19.97 USD)**: 6 recursos adicionales avanzados para líderes de equipo
 - **Downsell (50% descuento - $9.97 USD)**: Oferta alternativa para maximizar conversión
 
+### Integración con Hotmart
+
+El proyecto incluye integración completa con Hotmart para procesamiento de pagos:
+
+- **Modal de Checkout**: Captura nombre y email antes de redirigir a Hotmart
+- **Tabla `checkout_leads`**: Almacena leads con campos para email marketing y seguimiento
+- **Widgets de Sales Funnel**: Integrados en páginas Upsell y Downsell
+- **Parámetros pre-rellenados**: Nombre y email se pasan automáticamente a Hotmart
+- **Endpoint tRPC**: `checkout.captureLead` guarda datos y redirige con parámetros
+
 ### 10 Herramientas Interactivas con Seguimiento de Progreso
 
 **4 Herramientas Principales (Producto Base - $9.97):**
@@ -72,14 +82,27 @@ Identidad visual diferenciada con paleta **"Comunidad y Conexión"**:
 
 ### Base de Datos
 
-- **Cloudflare D1** - Base de datos SQLite en el Edge (migrado desde MySQL)
+- **MySQL/TiDB** - Base de datos relacional (Manus hosting)
+- **Drizzle ORM** - ORM type-safe con soporte para MySQL
 - **Drizzle Kit** - Migraciones y gestión de schema
 
-### Deployment Target
+**Tablas principales**:
+- `users`: Usuarios autenticados con roles (admin/user)
+- `user_progress`: Seguimiento de progreso en herramientas interactivas
+- `checkout_leads`: Leads capturados del funnel de ventas con Hotmart
 
-- **Cloudflare Pages** - Hosting del frontend
-- **Cloudflare Workers** - Ejecución del backend en el Edge
-- **100% Cloudflare Ecosystem** - Sin dependencias de Node.js nativo
+### Deployment Options
+
+**Opción 1: Manus Hosting (Actual)**
+- Backend: Express + tRPC en servidor Manus
+- Base de datos: MySQL/TiDB gestionado por Manus
+- Hosting: Infraestructura Manus con dominio personalizado
+
+**Opción 2: Cloudflare (Migración)**
+- Frontend: Cloudflare Pages
+- Backend: Cloudflare Workers con Hono
+- Base de datos: Cloudflare D1 (requiere conversión de MySQL a SQLite)
+- Ver `DEPLOYMENT.md` para instrucciones detalladas
 
 ---
 

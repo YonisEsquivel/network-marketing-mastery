@@ -86,3 +86,10 @@
 - [x] Integrar modal en todos los botones de Home (3 botones CTA)
 - [x] Verificar redirección a Hotmart con datos pre-rellenados
 - [x] Crear y ejecutar tests unitarios (5/5 pasaron)
+
+## Documentación y GitHub (Febrero 2026)
+- [x] Actualizar DEPLOYMENT.md con instrucciones de Cloudflare
+- [x] Actualizar README.md con cambios recientes (precios, modal, Hotmart)
+- [x] Crear archivo .env.example con variables de entorno necesarias
+- [ ] Sincronizar repositorio de GitHub con todos los cambios
+- [ ] Verificar que todo esté listo para migración a Cloudflare

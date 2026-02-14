@@ -33,15 +33,30 @@ pnpm run db:migrate:d1
 Configura las siguientes variables en el dashboard de Cloudflare o mediante wrangler:
 
 ```bash
-# Variables requeridas
+# Variables requeridas para autenticación
 wrangler secret put JWT_SECRET
 wrangler secret put OAUTH_SERVER_URL
 wrangler secret put VITE_APP_ID
 wrangler secret put OWNER_OPEN_ID
 wrangler secret put OWNER_NAME
 
+# Variables para base de datos (MySQL/TiDB)
+wrangler secret put DATABASE_URL
+
+# Variables para integración con Manus Forge APIs
+wrangler secret put BUILT_IN_FORGE_API_URL
+wrangler secret put BUILT_IN_FORGE_API_KEY
+wrangler secret put VITE_FRONTEND_FORGE_API_KEY
+wrangler secret put VITE_FRONTEND_FORGE_API_URL
+
+# Variables para analytics
+wrangler secret put VITE_ANALYTICS_ENDPOINT
+wrangler secret put VITE_ANALYTICS_WEBSITE_ID
+
 # Opcional: otras variables específicas de tu aplicación
 ```
+
+**Nota sobre Hotmart**: El proyecto incluye integración con Hotmart para procesamiento de pagos. La URL de checkout (`https://pay.hotmart.com/D104193943Q`) está configurada en `client/src/pages/Home.tsx`. Actualiza esta URL con tu propio código de producto de Hotmart antes de desplegar.
 
 ## Paso 4: Desplegar Backend (Workers)
 
@@ -153,15 +168,43 @@ pnpm run test             # Ejecutar tests
 pnpm run check            # Verificar tipos TypeScript
 ```
 
+## Características del Proyecto
+
+### Funnel de Ventas Integrado
+
+- **Modal de Checkout**: Captura nombre y email antes de redirigir a Hotmart
+- **Tabla `checkout_leads`**: Almacena leads con campos `name`, `email`, `source`, `status`, `emailSequenceStep`
+- **Endpoint tRPC**: `checkout.captureLead` guarda datos y redirige con parámetros pre-rellenados
+- **3 Botones CTA**: Integrados en la página Home con modal unificado
+- **Precios Optimizados**: $9.97 (base), $19.97 (upsell), $9.97 (downsell)
+
+### Base de Datos
+
+**Tablas principales**:
+- `users`: Usuarios autenticados con roles (admin/user)
+- `user_progress`: Seguimiento de progreso en herramientas
+- `checkout_leads`: Leads capturados del funnel de ventas
+
+### Integración con Hotmart
+
+- **Páginas Upsell/Downsell**: Widgets de Hotmart integrados
+- **Checkout URL**: Configurada en constante `HOTMART_CHECKOUT_URL`
+- **Parámetros**: `?name=[NOMBRE]&email=[EMAIL]` pre-rellenados automáticamente
+
 ## Notas Importantes
 
 ### Compatibilidad con Workers
 
 - ✅ **Hono** reemplaza Express
-- ✅ **D1** (SQLite) reemplaza MySQL
+- ⚠️ **MySQL/TiDB** (actual) vs **D1** (SQLite para Workers)
 - ✅ **Web Crypto API** para JWT
 - ✅ **Web APIs estándar** para cookies
-- ✅ **Drizzle ORM** compatible con D1
+- ✅ **Drizzle ORM** compatible con ambos
+
+**Importante**: El proyecto actualmente usa **MySQL/TiDB** (Manus hosting). Para migrar a Cloudflare Workers con D1, necesitarás:
+1. Convertir el schema de MySQL a SQLite en `drizzle/schema.ts`
+2. Exportar datos de MySQL e importarlos a D1
+3. Actualizar `wrangler.toml` con el binding de D1
 
 ### Limitaciones de Workers
 
