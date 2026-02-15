@@ -170,7 +170,7 @@ export default function Home() {
             <CardContent className="py-8 sm:py-10 space-y-6 px-4">
               <div className="text-center">
                 <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Por Qué "Network Marketing Mastery" Funciona Tan Bien
+                  Por Qué Network Marketing Mastery Funciona Tan Bien
                 </h3>
                 <div className="max-w-3xl mx-auto space-y-4 text-base sm:text-lg text-foreground leading-relaxed">
                   <p>
